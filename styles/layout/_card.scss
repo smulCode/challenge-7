@@ -1,8 +1,14 @@
 .container-card{  
     margin: 1em; 
-    background-color: #20bf55;
-    background-image:linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+    background: linear-gradient(38deg, #2bc693 30%, #28ea63 100%);
     border-radius:10px;
+    // background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+
+    // &:hover{
+    //     background-position: right center;
+    //     border: 1px solid red;
+    //     cursor: pointer;
+    // }
     
 }
 

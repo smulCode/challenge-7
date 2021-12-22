@@ -42,9 +42,7 @@ h4 {
 
 .container-form {
   margin: 1em;
-  background-color: #20bf55;
-  background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
-  border: 1px solid black;
+  background: linear-gradient(28deg, #2bc693 30%, #28ea63 100%);
   border-radius: 10px;
 }
 
@@ -60,8 +58,7 @@ h4 {
 
 .container-card {
   margin: 1em;
-  background-color: #20bf55;
-  background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+  background: linear-gradient(38deg, #2bc693 30%, #28ea63 100%);
   border-radius: 10px;
 }
 
