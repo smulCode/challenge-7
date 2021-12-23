@@ -9,6 +9,16 @@ const city = document.getElementById("city");
 const email = document.getElementById("email");
 const sendButton = document.getElementById("btn-send");
 const form = document.getElementById("form");
+const card = document.getElementById("card");
+const containerCard = document.getElementById("container-card");
+
+
+const imgContainer = document.createElement("div");
+imgContainer.classList.add("img-container");
+const image = document.createElement("img");
+image.classList.add("picture")
+containerCard.appendChild(imgContainer)
+imgContainer.appendChild(image)
 
 class user  {
     constructor(fullName,phoneNumber,streetName,houseNumber,zipCode,city,email){
@@ -25,7 +35,10 @@ class user  {
 sendButton.addEventListener("click",getInput)
 
 function getInput() {
+  
+
   document.querySelector(".name").innerText = `Name: ${fullName.value}`;
+
  let nr = phoneNumber.value.toString()
   if(phoneNumber.value.charAt(0) == 0){
     document.querySelector(".phonenumber").innerText = `Phone number: ${nr.replace('0', '+31')}`
@@ -43,8 +56,16 @@ function getInput() {
     let result = window.confirm(message);
   }
   saveInput()
- 
+  if(fullName.value == ""){
+    console.log(fullName.value);
+    showImage()
+  } else if (fullName.value !== ""){
+    console.log(fullName.value);
+  }else{ 
+    console.log("error");
+  }
 }
+
 
 
 
@@ -52,7 +73,7 @@ function saveInput(){
     const user1 = new user(fullName.value,phoneNumber.value,streetName.value,houseNumber.value,zipCode.value,city.value,email.value);
     console.log(user1);
 
-
+    
     
     fullName.value = "";
     phoneNumber.value = "";
@@ -61,7 +82,16 @@ function saveInput(){
     zipCode.value = "";
     city.value = "";
     email.value = "";
+    
+   
+    
 
 }
 
+function showImage(){
+  imgContainer.classList.add("image-show")
+  image.src = "https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80";
+ 
 
+
+}
