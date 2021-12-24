@@ -36,7 +36,7 @@ sendButton.addEventListener("click",getInput)
 
 function getInput() {
   
-
+  validateForm()
   document.querySelector(".name").innerText = `Name: ${fullName.value}`;
 
  let nr = phoneNumber.value.toString()
@@ -56,14 +56,7 @@ function getInput() {
     let result = window.confirm(message);
   }
   saveInput()
-  if(fullName.value == ""){
-    console.log(fullName.value);
-    showImage()
-  } else if (fullName.value !== ""){
-    console.log(fullName.value);
-  }else{ 
-    console.log("error");
-  }
+
 }
 
 
@@ -74,6 +67,7 @@ function saveInput(){
     console.log(user1);
 
     
+    showImage(user1)
     
     fullName.value = "";
     phoneNumber.value = "";
@@ -83,15 +77,32 @@ function saveInput(){
     city.value = "";
     email.value = "";
     
-   
+    
     
 
 }
 
-function showImage(){
-  imgContainer.classList.add("image-show")
-  image.src = "https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80";
+function showImage(user){
+
+
+  if(fullName.value  == "" || fullName.value  == null){
+    console.log(fullName.value);
+    imgContainer.classList.remove("image-show")
+  } else{ 
+  
+    imgContainer.classList.add("image-show")
+    image.src = "https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80";
+    console.log("show image");
+  }
  
 
 
+}
+
+function validateForm() {
+  const formValues = document.forms["myForm"]["fullname"].value;
+  if (formValues  == "" || formValues  == null) {
+    alert("Name must be filled out");
+    return false;
+  }
 }
